@@ -31,6 +31,16 @@ const intialFormData = {
 function App() {
   const [formData, setFormData] = useState(intialFormData);
 
+  function handleContactField(field, value) {
+    setFormData(prev => ({
+      ...prev,
+      contact: {
+        ...prev.contact,
+        [field]: value,
+      }
+    }));
+  };
+
   return (
     <h1>MY APP</h1>
   )
