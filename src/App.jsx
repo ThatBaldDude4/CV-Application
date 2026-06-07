@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Contact from './Contact';
 import './App.css';
 const intialFormData = {
+  submitted: false,
   contact: {
     firstName: "",
     lastName: "",
@@ -44,10 +45,8 @@ function App() {
 
   return (
     <>
-      <Contact
-      handleContactField={handleContactField}
-      />
-      <h2>Full Name: {formData.contact.firstName + " " + formData.contact.lastName}</h2>
+      {!formData.submitted && <Contact handleContactField={handleContactField} contact={formData.contact} />}
+      <h2>Full Name: {formData.contact.firstName + " " + formData.contact.lastName + " " + formData.contact.suffix}</h2>
     </>
   )
 }
