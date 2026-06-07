@@ -3,7 +3,7 @@ body {
     color: rgb(60, 252, 255);
 }
 
-.contact-section {
+.contact-section, .education-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
