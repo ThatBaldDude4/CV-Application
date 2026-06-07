@@ -1,6 +1,14 @@
 body {
     background-color: black;
     color: rgb(60, 252, 255);
+}
+
+.contact-section {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    max-width: 200px;
 }
