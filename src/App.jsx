@@ -1,5 +1,6 @@
-import { useState } from 'react'
-
+import { useState } from 'react';
+import Contact from './Contact';
+import './App.css';
 const intialFormData = {
   contact: {
     firstName: "",
@@ -42,7 +43,12 @@ function App() {
   };
 
   return (
-    <h1>MY APP</h1>
+    <>
+      <Contact
+      handleContactField={handleContactField}
+      />
+      <h2>Full Name: {formData.contact.firstName + " " + formData.contact.lastName}</h2>
+    </>
   )
 }
 
