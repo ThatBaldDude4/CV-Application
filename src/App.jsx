@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Contact from './Contact';
 import Education from './Education';
 import Experience from './Experience';
+import FinalForm from './FinalForm';
 import './App.css';
 
 
@@ -94,10 +95,9 @@ function App() {
           addItemToArray={addItemToArray}
           removeItemFromArray={removeItemFromArray}
         />
+        <FinalForm formData={formData} />
         </>
       }
-      <h2>Full Name: {formData.contact.firstName + " " + formData.contact.lastName + " " + formData.contact.suffix}</h2>
-
       {/* this is testing the education form */}
     </>
   )
