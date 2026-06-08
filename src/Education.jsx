@@ -1,15 +1,16 @@
-import { useState } from 'react';
-
 export default function Education({education, handleArrayField, addItemToArray, removeItemFromArray}) {
     const arrayName = "education";
     const educationList = education.map((eduObj) => {
             return (
                 <div key={eduObj.id} className="education-list">
-                    <label>
+                    <label >
                         School:
-                        <input value={eduObj.school} onChange={(e) => {
-                            handleArrayField(arrayName, eduObj.id, "school", e.target.value)
-                        }}/>
+                        <input 
+                            value={eduObj.school} onChange={(e) => {
+                                handleArrayField(arrayName, eduObj.id, "school", e.target.value)
+                            }}
+                            type="text"
+                        />
                     </label>
                     <label>
                         Degree:
@@ -28,7 +29,9 @@ export default function Education({education, handleArrayField, addItemToArray, 
         <button type="button" onClick={() => {
             addItemToArray(arrayName, {id: crypto.randomUUID(), school: "", degree: ""})
         }}>Add Education</button>
-        {educationList}
+        <section className="education-section">
+           {educationList}
+        </section>
         </>
     )
 };

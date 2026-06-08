@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Contact from './Contact';
 import Education from './Education';
+import Experience from './Experience';
 import './App.css';
 
 
@@ -87,14 +88,17 @@ function App() {
           addItemToArray={addItemToArray}
           removeItemFromArray={removeItemFromArray}
         />
+        <Experience 
+          experience={formData.experience} 
+          handleArrayField={handleArrayField} 
+          addItemToArray={addItemToArray}
+          removeItemFromArray={removeItemFromArray}
+        />
         </>
       }
       <h2>Full Name: {formData.contact.firstName + " " + formData.contact.lastName + " " + formData.contact.suffix}</h2>
 
       {/* this is testing the education form */}
-      {formData.education.map((obj) => {
-        return <div key={obj.id}>{obj.school}</div>
-      })}
     </>
   )
 }

@@ -3,7 +3,7 @@ body {
     color: rgb(60, 252, 255);
 }
 
-.contact-section, .education-list {
+.contact-section, .education-list, .experience-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -11,4 +11,9 @@ body {
 
 button {
     max-width: 200px;
+    margin-bottom: 30px;
+}
+
+input {
+    margin-left: 15px;
 }

@@ -5,6 +5,7 @@ export default function Contact({handleContactField, contact}) {
 
     return (
         <section className="contact-section">
+            <h2>Contact:</h2>
             <label>
                 First Name:
                 <input type="text" value={contact.firstName} onChange={(e) => {handleContactField("firstName", e.target.value)}}/>
