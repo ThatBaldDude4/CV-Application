@@ -25,6 +25,28 @@ export default function FinalForm({formData}) {
                     </div>
                 }
             </div>
+
+            <div className="education-form-container">
+                {formData.education.map((data) => {
+                    return <div key={data.id}>
+                        <div>{data.school}</div>
+                        <div>{data.degree}</div>
+                        <div>{data.completionDate}</div>
+                    </div>
+                })}
+            </div>
+
+            <div className="experience-form-container">
+                {formData.experience.map((data) => {
+                    return <div key={data.id}>
+                        <div>{data.title}</div>
+                        <div>{data.company}</div>
+                        <div>{data.startDate}</div>
+                        <div>{data.endDate}</div>
+                        <div>{data.skills}</div>
+                    </div>
+                })}
+            </div>
         </div>
     )
 };
