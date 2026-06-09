@@ -6,23 +6,32 @@ export default function Experience({experience, handleArrayField, addItemToArray
                     <label >
                         Company:
                         <input 
-                            value={expObj.school} onChange={(e) => {
-                                handleArrayField(arrayName, expObj.id, "school", e.target.value)
+                            value={expObj.company} onChange={(e) => {
+                                handleArrayField(arrayName, expObj.id, "company", e.target.value)
                             }}
                             type="text"
                         />
                     </label>
                     <label>
-                        Degree:
-                        <input value={expObj.degree} onChange={(e) => {
-                            handleArrayField(arrayName, expObj.id, "degree", e.target.value)
+                        Title:
+                        <input value={expObj.title} onChange={(e) => {
+                            handleArrayField(arrayName, expObj.id, "title", e.target.value)
                         }}/>
                     </label>
                     <label>
                         Start Date:
                         <input 
-                            value={expObj.startData} onChange={(e) => {
-                            handleArrayField(arrayName, expObj.id, "startData", e.target.value)
+                            value={expObj.startDate} onChange={(e) => {
+                            handleArrayField(arrayName, expObj.id, "startDate", e.target.value)
+                            }}
+                            type="date"
+                        />
+                    </label>
+                    <label>
+                        End Date:
+                        <input 
+                            value={expObj.endDate} onChange={(e) => {
+                            handleArrayField(arrayName, expObj.id, "endDate", e.target.value)
                             }}
                             type="date"
                         />
@@ -31,22 +40,13 @@ export default function Experience({experience, handleArrayField, addItemToArray
                         Skills:
                         <textarea 
                             maxLength="500" 
-                            placeholder="add relevant skills and responibilities"
+                            placeholder="add relevant skills and responsibilities"
+                            value={expObj.skills}
                             onChange={(e) => {
                                 handleArrayField(arrayName, expObj.id, "skills", e.target.value);
                             }}
                         >
-
                         </textarea>
-                    </label>
-                    <label>
-                        End Date:
-                        <input 
-                            value={expObj.startData} onChange={(e) => {
-                            handleArrayField(arrayName, expObj.id, "endData", e.target.value)
-                            }}
-                            type="date"
-                        />
                     </label>
                     <button type="button" onClick={() => {removeItemFromArray(arrayName, expObj.id)}}>Delete</button>
                 </div>
@@ -56,7 +56,14 @@ export default function Experience({experience, handleArrayField, addItemToArray
         <>
         <h2>Experience:</h2>
         <button type="button" onClick={() => {
-            addItemToArray(arrayName, {id: crypto.randomUUID(), school: "", degree: ""})
+            addItemToArray(arrayName, {
+                id: crypto.randomUUID(),
+                title: "",
+                company: "",
+                startDate: "",
+                endDate: "",
+                skills: ""
+            })
         }}>Add experience</button>
         <section className="experience-section">
            {experienceList}
