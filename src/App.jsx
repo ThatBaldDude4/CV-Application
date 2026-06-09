@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { initialFormData } from './initialFormData';
+import validateForm from './ValidateForm';
 import Contact from './Contact';
 import Education from './Education';
 import Experience from './Experience';
@@ -6,37 +8,13 @@ import FinalForm from './FinalForm';
 import './App.css';
 
 
-const intialFormData = {
-  submitted: false,
-  contact: {
-    firstName: "",
-    lastName: "",
-    suffix: "",
-    email: "",
-    phone: "",
-    linkedin: "",
-    github: ""
-  },
-  education: [
-    {
-      id: crypto.randomUUID(),
-      school: "",
-      degree: "",
-    }
-  ],
-  experience: [
-    {
-      id: crypto.randomUUID(),
-      company: "",
-      startDate: "",
-      endDate: "",
-      skills: ""
-    }
-  ]
-};
+
 
 function App() {
-  const [formData, setFormData] = useState(intialFormData);
+  const [formData, setFormData] = useState(initialFormData);
+  const isSubmitted = formData.submitted;
+  const formButtonText = isSubmitted ? "EDIT" : "SUBMIT";
+  const isValid = validateForm(formData).length === 0;
 
   function handleContactField(field, value) {
     setFormData(prev => ({
@@ -60,7 +38,7 @@ function App() {
       })
     }))
   };
-
+ 
   function addItemToArray(arrayName, newItem) {
     setFormData(prev => ({
       ...prev,
@@ -95,10 +73,20 @@ function App() {
           addItemToArray={addItemToArray}
           removeItemFromArray={removeItemFromArray}
         />
-        <FinalForm formData={formData} />
         </>
       }
-      {/* this is testing the education form */}
+      {formData.submitted &&
+        <FinalForm formData={formData} />
+      }
+      <div className="toggle-view-button">
+          <button type="button" onClick={() => {
+            if (!isValid) {return}
+            setFormData(prev => ({...prev, submitted: !prev.submitted}))
+          }}>
+          {formButtonText}
+          </button>
+      </div>
+      
     </>
   )
 }
