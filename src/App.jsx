@@ -43,8 +43,8 @@ function App() {
     setFormData(prev => ({
       ...prev,
       [arrayName]: [
-        ...prev[arrayName],
-        newItem
+        newItem,
+        ...prev[arrayName]
       ]
     }))
   };
