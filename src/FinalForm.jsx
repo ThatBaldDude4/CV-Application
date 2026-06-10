@@ -8,6 +8,7 @@ export default function FinalForm({formData}) {
                 }
             </h1>
             <div className="contact-form-container">
+                <h2>CONTACT</h2>
                 <div className="email-container">
                     {formData.contact.email}
                 </div>
@@ -36,6 +37,7 @@ export default function FinalForm({formData}) {
             </div>
 
             <div className="education-form-container">
+                <h2>EDUCATION</h2>
                 {formData.education.map((data) => {
                     return <div key={data.id}>
                         <div>{data.school}</div>
@@ -46,6 +48,7 @@ export default function FinalForm({formData}) {
             </div>
 
             <div className="experience-form-container">
+                <h2>EXPERIENCE</h2>
                 {formData.experience.map((data) => {
                     return <div key={data.id}>
                         <div>{data.title}</div>
