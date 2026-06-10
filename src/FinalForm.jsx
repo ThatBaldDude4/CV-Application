@@ -11,18 +11,27 @@ export default function FinalForm({formData}) {
                 <div className="email-container">
                     {formData.contact.email}
                 </div>
+                <span className="divider-line"></span>
                 <div className="phone-container">
                     {formData.contact.phone}
                 </div>
                 {formData.contact.linkedin?.length > 0 &&
+                    <>
+                    <span className="divider-line"></span>
                     <div className="linkedin-container">
                         {formData.contact.linkedin}
                     </div>
+                    </>
+                    
                 }
                 {formData.contact.github?.length > 0 &&
+                    <>
+                    <span className="divider-line"></span>
                     <div className="github-container">
                         {formData.contact.github}
                     </div>
+                    </>
+                    
                 }
             </div>
 
