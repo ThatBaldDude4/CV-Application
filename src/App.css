@@ -33,13 +33,10 @@ label {
     align-items: center;
 }
 
+
 button {
     max-width: 200px;
     margin-bottom: 30px;
-}
-
-input {
-    margin-left: 15px;
 }
 
 hr {
