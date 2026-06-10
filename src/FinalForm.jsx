@@ -9,47 +9,57 @@ export default function FinalForm({formData}) {
             </h1>
             <div className="contact-form-container">
                 <h2>CONTACT</h2>
-                <div className="email-container">
-                    {formData.contact.email}
-                </div>
-                <span className="divider-line"></span>
-                <div className="phone-container">
-                    {formData.contact.phone}
-                </div>
-                {formData.contact.linkedin?.length > 0 &&
-                    <>
-                    <span className="divider-line"></span>
-                    <div className="linkedin-container">
-                        {formData.contact.linkedin}
+                <div className="contact-form-data-container">
+                    <div className="email-container">
+                        {formData.contact.email}
                     </div>
-                    </>
-                    
-                }
-                {formData.contact.github?.length > 0 &&
-                    <>
+
                     <span className="divider-line"></span>
-                    <div className="github-container">
-                        {formData.contact.github}
+
+                    <div className="phone-container">
+                        {formData.contact.phone}
                     </div>
-                    </>
-                    
-                }
+
+                    {formData.contact.linkedin?.length > 0 &&
+                        <>
+                        <span className="divider-line"></span>
+                        <div className="linkedin-container">
+                            {formData.contact.linkedin}
+                        </div>
+                        </>
+                        
+                    }
+                    {formData.contact.github?.length > 0 &&
+                        <>
+                        <span className="divider-line"></span>
+                        <div className="github-container">
+                            {formData.contact.github}
+                        </div>
+                        </>
+                        
+                    }
+                </div>
+                
             </div>
 
             <div className="education-form-container">
                 <h2>EDUCATION</h2>
-                {formData.education.map((data) => {
-                    return <div key={data.id}>
-                        <div>{data.school}</div>
-                        <div>{data.degree}</div>
-                        <div>{data.completionDate}</div>
-                    </div>
-                })}
+                <div className = "education-form-data-container">
+                    {formData.education.map((data) => {
+                        return <div key={data.id}>
+                            <div>{data.school}</div>
+                            <div>{data.degree}</div>
+                            <div>{data.completionDate}</div>
+                        </div>
+                    })}
+                </div>
+                    
             </div>
 
             <div className="experience-form-container">
                 <h2>EXPERIENCE</h2>
-                {formData.experience.map((data) => {
+                <div className="experience-form-data-container">
+                    {formData.experience.map((data) => {
                     return <div key={data.id}>
                         <div>{data.title}</div>
                         <div>{data.company}</div>
@@ -57,7 +67,8 @@ export default function FinalForm({formData}) {
                         <div>{data.endDate}</div>
                         <div>{data.skills}</div>
                     </div>
-                })}
+                    })}
+                </div>
             </div>
         </div>
     )

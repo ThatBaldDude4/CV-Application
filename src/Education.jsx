@@ -26,7 +26,7 @@ export default function Education({education, handleArrayField, addItemToArray, 
                                 handleArrayField(arrayName, eduObj.id, "completionDate", e.target.value)
                             }}
                             type="date"
-                            value={eduObj.completionDate} 
+                            value={eduObj.completionDate}
                         />
                     </label>
                     <button type="button" onClick={() => {removeItemFromArray(arrayName, eduObj.id)}}>Delete Data</button>

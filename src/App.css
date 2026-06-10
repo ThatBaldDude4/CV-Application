@@ -1,12 +1,13 @@
 body {
     background-color: black;
     color: rgb(60, 252, 255);
-}
-
-#root {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+div {
+    font-size: 1.5rem;
 }
 
 .contact-list, .education-list, .experience-list {
@@ -49,12 +50,32 @@ hr {
     width: 8.5in;
     height: 11in;
     border: 2px solid red;
+    display: flex;
+    flex-direction: column;
 }
 
-.contact-form-container {
+.contact-form-container,
+.education-form-container,
+.experience-form-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     min-width: 100%;
     justify-content: center;
+}
+
+.contact-form-data-container {
+    display: flex;
+}
+
+.education-form-data-container,
+.experience-form-data-container {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-left: 50px;
 }
 
 .divider-line {
