@@ -53,7 +53,7 @@ export default function Experience({experience, handleArrayField, addItemToArray
             )
         });
     return (
-        <>
+        <div className="experience-container">
         <h2>Experience:</h2>
         <button type="button" onClick={() => {
             addItemToArray(arrayName, {
@@ -68,6 +68,6 @@ export default function Experience({experience, handleArrayField, addItemToArray
         <section className="experience-section">
            {experienceList}
         </section>
-        </>
+        </div>
     )
 }

@@ -35,7 +35,7 @@ export default function Education({education, handleArrayField, addItemToArray, 
         });
 
     return (
-        <>
+        <div className="education-container">
         <h2>Education:</h2>
         <button type="button" onClick={() => {
             addItemToArray(arrayName, {
@@ -48,6 +48,6 @@ export default function Education({education, handleArrayField, addItemToArray, 
         <section className="education-section">
            {educationList}
         </section>
-        </>
+        </div>
     )
 };

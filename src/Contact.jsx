@@ -4,7 +4,7 @@ export default function Contact({handleContactField, contact}) {
     const [showMoreContact, setShowMoreContact] = useState(false);
 
     return (
-        <section className="contact-section">
+        <section className="contact-list">
             <h2>Contact:</h2>
             <label>
                 First Name:

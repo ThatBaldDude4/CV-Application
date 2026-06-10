@@ -7,7 +7,7 @@ export default function FinalForm({formData}) {
                 `${formData.contact.firstName} ${formData.contact.lastName} ${formData.contact.suffix}`
                 }
             </h1>
-            <div className="contact-container">
+            <div className="contact-form-container">
                 <div className="email-container">
                     {formData.contact.email}
                 </div>

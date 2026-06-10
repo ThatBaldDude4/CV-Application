@@ -61,18 +61,21 @@ function App() {
       {!formData.submitted &&
         <> 
         <Contact handleContactField={handleContactField} contact={formData.contact} />
+        <hr />
         <Education 
           education={formData.education} 
           handleArrayField={handleArrayField} 
           addItemToArray={addItemToArray}
           removeItemFromArray={removeItemFromArray}
         />
+        <hr />
         <Experience 
           experience={formData.experience} 
           handleArrayField={handleArrayField} 
           addItemToArray={addItemToArray}
           removeItemFromArray={removeItemFromArray}
         />
+        <hr />
         </>
       }
       {formData.submitted &&
