@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { initialFormData2 } from './initialFormData';
+import { initialFormData } from './initialFormData';
 import validateForm from './ValidateForm';
 import Contact from './Contact';
 import Education from './Education';
@@ -11,7 +11,7 @@ import './App.css';
 
 
 function App() {
-  const [formData, setFormData] = useState(initialFormData2);
+  const [formData, setFormData] = useState(initialFormData);
   const isSubmitted = formData.submitted;
   const formButtonText = isSubmitted ? "EDIT" : "SUBMIT";
   const isValid = validateForm(formData).length === 0;
