@@ -97,7 +97,8 @@ textarea {
 .experience-container > button,
 .education-list button,
 .experience-list button,
-.toggle-view-button button {
+.toggle-view-button button,
+.download-button-container button {
   padding: 0.7rem 1rem;
   border: none;
   border-radius: 8px;
@@ -253,6 +254,12 @@ hr {
   margin-top: 0.25rem;
   line-height: 1.45;
   color: #374151;
+}
+
+.download-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
